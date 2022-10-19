@@ -19,20 +19,11 @@ export class MainPageComponent {
   ];
 
   nuevo: Personaje = {
-    nombre: '',
-    poder: 0
+    nombre: 'Lala',
+    poder: 10
   }
 
-  agregar() {
-    if( this.nuevo.nombre.trim().length === 0) {
-      return;
-    }
-    this.personajes.push(this.nuevo);
-
-    this.nuevo = {
-      nombre: '',
-      poder: 0
-    }
+  agregarNuevoPersonaje( argumento:Personaje ):void {
+    this.personajes.push( argumento );
   }
-
 }

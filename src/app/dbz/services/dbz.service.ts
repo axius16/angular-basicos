@@ -3,11 +3,8 @@ import { Personaje } from '../interfaces/dbz.interface';
 
 @Injectable()
 export class DbzService {
-  constructor() {
-    console.log('Servicio Inicializado');
-  }
 
-  personajes: Personaje[] = [
+  private _personajes: Personaje[] = [
     {
       nombre: 'Goku',
       poder: 15000,
@@ -18,12 +15,11 @@ export class DbzService {
     },
   ];
 
-  nuevo: Personaje = {
-    nombre: 'Lala',
-    poder: 10,
-  };
+  get personajes(): Personaje[] {
+    return [...this._personajes];
+  }
 
-  agregarNuevoPersonaje(argumento: Personaje): void {
-    this.personajes.push(argumento);
+  agregarPersonaje( personaje: Personaje ) {
+    this._personajes.push( personaje );
   }
 }

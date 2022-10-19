@@ -1,14 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Personaje } from '../interfaces/dbz.interface';
-import { DbzService } from '../services/dbz.service';
 
-@Component({
-  selector: 'app-main-page',
-  templateUrl: './main-page.component.html',
-})
-export class MainPageComponent {
-
-  constructor( private dbzService: DbzService ) {}
+@Injectable()
+export class DbzService {
+  constructor() {
+    console.log('Servicio Inicializado');
+  }
 
   personajes: Personaje[] = [
     {
@@ -29,5 +26,4 @@ export class MainPageComponent {
   agregarNuevoPersonaje(argumento: Personaje): void {
     this.personajes.push(argumento);
   }
-
 }

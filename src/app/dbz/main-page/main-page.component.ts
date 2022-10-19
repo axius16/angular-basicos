@@ -24,6 +24,8 @@ export class MainPageComponent {
   }
 
   agregarNuevoPersonaje( argumento:Personaje ):void {
+
     this.personajes.push( argumento );
+
   }
 }
